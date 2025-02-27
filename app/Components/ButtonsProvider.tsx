@@ -1,9 +1,11 @@
-import { Button } from "@/components/ui/button";
+"use client";
 
+import { Button } from "@/components/ui/button";
+import { signIn } from "next-auth/react";
 const ButtonsProvider = () => {
   return (
     <div className="flex flex-col space-y-4">
-      <Button>
+      <Button onClick={() => signIn("google", { redirectTo: "/dashboard" })}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -24,7 +26,7 @@ const ButtonsProvider = () => {
         </svg>
         Continuer avec Google
       </Button>
-      <Button>
+      <Button onClick={() => signIn("github", { redirectTo: "/dashboard" })}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
