@@ -2,10 +2,17 @@
 import Image from "next/image";
 
 import LogoMdc from "@/public/logo.svg";
+import { useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
 import { Cursor, Typewriter } from "react-simple-typewriter";
 import ButtonsProvider from "./Components/ButtonsProvider";
 
 export default function Home() {
+  const { data: session } = useSession();
+
+  if (session) {
+    redirect("/dashboard/notes");
+  }
   return (
     <section className="w-full h-screen flex items-center justify-center flex-col gap-2">
       <Image

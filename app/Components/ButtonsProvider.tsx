@@ -5,7 +5,7 @@ import { signIn } from "next-auth/react";
 const ButtonsProvider = () => {
   return (
     <div className="flex flex-col space-y-4">
-      <Button onClick={() => signIn("google", { redirectTo: "/dashboard" })}>
+      <Button onClick={() => signIn("google")}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -26,7 +26,7 @@ const ButtonsProvider = () => {
         </svg>
         Continuer avec Google
       </Button>
-      <Button onClick={() => signIn("github", { redirectTo: "/dashboard" })}>
+      <Button onClick={() => signIn("github")}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
